@@ -90,19 +90,19 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center py-16 lg:py-24">
             <div className="order-2 lg:order-1">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 leading-tight">
                 Get Expert Guidance for Your Study Abroad Plans
               </h1>
-              <p className="text-xl text-dark mb-8 leading-relaxed">
+              <p className="text-lg md:text-xl text-dark mb-8 leading-relaxed max-w-2xl">
                 Transform your dreams of international education into reality with our personalized guidance and support.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                <button className="bg-secondary text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors text-base">
                   Get Started
                 </button>
-                <button className="border-2 border-dark text-dark px-8 py-4 rounded-lg font-semibold hover:bg-dark hover:text-white transition-colors">
+                <button className="border-2 border-dark text-dark px-8 py-4 rounded-lg font-semibold hover:bg-dark hover:text-white transition-colors text-base">
                   Download Brochure
                 </button>
               </div>
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
               <img
                 src="https://picsum.photos/600/400?random=8"
                 alt="Woman holding books"
-                className="rounded-lg shadow-2xl w-full"
+                className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
               />
             </div>
           </div>
@@ -119,28 +119,28 @@ const Home: React.FC = () => {
       </section>
 
       {/* Upcoming Events */}
-      <section className="py-16 bg-light">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-dark mb-12 text-center">Upcoming Events</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <h2 className="text-4xl font-bold text-dark mb-16 text-center">Upcoming Events</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event) => (
-              <div key={event.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={event.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img
                   src={event.image}
                   alt={event.title}
                   className="w-full h-48 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-dark mb-2">{event.title}</h3>
+                  <h3 className="text-xl font-semibold text-dark mb-3">{event.title}</h3>
                   <div className="flex items-center text-gray-600 mb-2">
                     <Calendar className="h-4 w-4 mr-2" />
                     {event.date}
                   </div>
-                  <div className="flex items-center text-gray-600 mb-4">
+                  <div className="flex items-center text-gray-600 mb-6">
                     <MapPin className="h-4 w-4 mr-2" />
                     {event.location}
                   </div>
-                  <button className="w-full bg-secondary text-white py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                  <button className="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
                     Register Now
                   </button>
                 </div>
@@ -151,40 +151,40 @@ const Home: React.FC = () => {
       </section>
 
       {/* Contact Form */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-dark mb-12 text-center">Start Your Journey</h2>
-          <div className="bg-light rounded-lg p-8">
+          <h2 className="text-4xl font-bold text-dark mb-16 text-center">Start Your Journey</h2>
+          <div className="bg-light rounded-2xl p-8 shadow-lg">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">Full Name</label>
+                  <label className="block text-sm font-medium text-dark mb-3">Full Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
                     placeholder="Enter your full name"
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-dark mb-2">Email</label>
+                  <label className="block text-sm font-medium text-dark mb-3">Email</label>
                   <input
                     type="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
                     placeholder="your@email.com"
                   />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-dark mb-2">Phone Number</label>
+                <label className="block text-sm font-medium text-dark mb-3">Phone Number</label>
                 <input
                   type="tel"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
                   placeholder="+91 98765 43210"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-dark mb-2">Preferred Study Destination</label>
-                <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                <label className="block text-sm font-medium text-dark mb-3">Preferred Study Destination</label>
+                <select className="w-full px-4 py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
                   <option>Select a country</option>
                   <option>United States</option>
                   <option>United Kingdom</option>
@@ -195,7 +195,7 @@ const Home: React.FC = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-secondary text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors"
+                className="w-full bg-secondary text-white py-4 rounded-lg font-semibold hover:bg-blue-600 transition-all transform hover:scale-105"
               >
                 Submit Inquiry
               </button>
@@ -205,19 +205,19 @@ const Home: React.FC = () => {
       </section>
 
       {/* Popular Destinations */}
-      <section className="py-16 bg-light">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-dark mb-12 text-center">Popular Top Study Destinations</h2>
+          <h2 className="text-4xl font-bold text-dark mb-16 text-center">Popular Top Study Destinations</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {destinations.map((destination) => (
-              <div key={destination.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div key={destination.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <img
                   src={destination.image}
                   alt={destination.name}
                   className="w-full h-40 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-dark mb-2">{destination.name}</h3>
+                  <h3 className="text-xl font-semibold text-dark mb-3">{destination.name}</h3>
                   <p className="text-gray-600 mb-4">{destination.description}</p>
                   <p className="text-sm font-medium text-secondary">{destination.universities}</p>
                 </div>
@@ -228,34 +228,34 @@ const Home: React.FC = () => {
       </section>
 
       {/* Legacy Section */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-dark mb-4">A Legacy of Trust, Excellence, and Global Presence</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-dark mb-6">A Legacy of Trust, Excellence, and Global Presence</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               For over 15 years, we've been guiding students to achieve their international education dreams with personalized support and expert advice.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Globe className="h-10 w-10 text-dark" />
+              <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Globe className="h-12 w-12 text-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">Global Reach</h3>
+              <h3 className="text-2xl font-semibold text-dark mb-3">Global Reach</h3>
               <p className="text-gray-600">Partnerships with 500+ universities worldwide</p>
             </div>
             <div className="text-center">
-              <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="h-10 w-10 text-dark" />
+              <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="h-12 w-12 text-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">10,000+ Students</h3>
+              <h3 className="text-2xl font-semibold text-dark mb-3">10,000+ Students</h3>
               <p className="text-gray-600">Successfully placed in top universities</p>
             </div>
             <div className="text-center">
-              <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-10 w-10 text-dark" />
+              <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Award className="h-12 w-12 text-dark" />
               </div>
-              <h3 className="text-xl font-semibold text-dark mb-2">95% Success Rate</h3>
+              <h3 className="text-2xl font-semibold text-dark mb-3">95% Success Rate</h3>
               <p className="text-gray-600">Visa approval and university admissions</p>
             </div>
           </div>
@@ -263,29 +263,29 @@ const Home: React.FC = () => {
       </section>
 
       {/* Student Reviews */}
-      <section className="py-16 bg-light">
+      <section className="py-20 bg-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-dark mb-12 text-center">Student Success Reviews</h2>
+          <h2 className="text-4xl font-bold text-dark mb-16 text-center">Student Success Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {reviews.map((review) => (
-              <div key={review.id} className="bg-white rounded-lg shadow-lg p-6">
-                <div className="flex items-center mb-4">
+              <div key={review.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
+                <div className="flex items-center mb-6">
                   <img
                     src={review.image}
                     alt={review.name}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="w-16 h-16 rounded-full mr-4"
                   />
                   <div>
-                    <h4 className="font-semibold text-dark">{review.name}</h4>
+                    <h4 className="font-semibold text-dark text-lg">{review.name}</h4>
                     <p className="text-sm text-gray-600">{review.university}</p>
                   </div>
                 </div>
-                <div className="flex mb-3">
+                <div className="flex mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 italic">"{review.review}"</p>
+                <p className="text-gray-600 italic leading-relaxed">"{review.review}"</p>
               </div>
             ))}
           </div>
