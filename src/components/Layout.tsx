@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Users, Settings, LogIn, UserPlus, Menu, X, Phone, Mail } from 'lucide-react';
+import { BookOpen, Home, Users, LogIn, UserPlus, Menu, X, Phone, Mail } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -34,22 +34,19 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              {navigation.slice(0, 3).map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`${
-                      location.pathname === item.href
-                        ? 'text-primary border-b-2 border-primary'
-                        : 'text-dark hover:text-primary'
-                    } px-3 py-2 text-sm font-medium transition-colors`}
-                  >
-                    {item.name}
-                  </Link>
-                );
-              })}
+              {navigation.slice(0, 3).map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`${
+                    location.pathname === item.href
+                      ? 'text-primary border-b-2 border-primary'
+                      : 'text-dark hover:text-primary'
+                  } px-3 py-2 text-sm font-medium transition-colors`}
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
 
             {/* Desktop CTA Buttons */}
@@ -185,24 +182,24 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               <h3 className="text-lg font-semibold mb-4">Services</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                  <button className="text-gray-300 hover:text-primary transition-colors">
                     University Selection
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                  <button className="text-gray-300 hover:text-primary transition-colors">
                     Application Assistance
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                  <button className="text-gray-300 hover:text-primary transition-colors">
                     Visa Processing
-                  </a>
+                  </button>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                  <button className="text-gray-300 hover:text-primary transition-colors">
                     Pre-departure Support
-                  </a>
+                  </button>
                 </li>
               </ul>
             </div>
@@ -215,15 +212,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 © 2024 360 Education. All rights reserved.
               </p>
               <div className="flex space-x-6 mt-4 md:mt-0">
-                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                <button className="text-gray-400 hover:text-primary text-sm transition-colors">
                   Privacy Policy
-                </a>
-                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                </button>
+                <button className="text-gray-400 hover:text-primary text-sm transition-colors">
                   Terms of Service
-                </a>
-                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                </button>
+                <button className="text-gray-400 hover:text-primary text-sm transition-colors">
                   Cookie Policy
-                </a>
+                </button>
               </div>
             </div>
           </div>
