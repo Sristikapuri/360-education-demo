@@ -314,6 +314,9 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div style={{width: '100%', height: '192px', backgroundColor: '#FFD700', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold'}}>
+                  Canada Expo
+                </div>
                 <Globe className="h-12 w-12 text-dark" />
               </div>
               <h3 className="text-2xl font-semibold text-dark mb-3">Global Reach</h3>
