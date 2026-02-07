@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Users, Award, Clock, Star, ChevronRight, MapPin, Calendar, Phone, Mail, Globe } from 'lucide-react';
+import { BookOpen, Users, Award, Clock, Star, ChevronRight, MapPin, Calendar, Phone, Mail, Globe, Check } from 'lucide-react';
 
 const Home: React.FC = () => {
   const events = [
@@ -88,11 +88,11 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-primary">
+      <section className="bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-16 lg:py-24">
-            <div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6">
+            <div className="order-2 lg:order-1">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 leading-tight">
                 Get Expert Guidance for Your Study Abroad Plans
               </h1>
               <p className="text-xl text-dark mb-8 leading-relaxed">
@@ -107,11 +107,11 @@ const Home: React.FC = () => {
                 </button>
               </div>
             </div>
-            <div className="relative">
+            <div className="order-1 lg:order-2 relative">
               <img
-                src="https://via.placeholder.com/600x400/FFD700/000000?text=Student+with+Books"
-                alt="Student with books"
-                className="rounded-lg shadow-2xl"
+                src="https://via.placeholder.com/600x400/FFD700/000000?text=Woman+with+Books"
+                alt="Woman holding books"
+                className="rounded-lg shadow-2xl w-full"
               />
             </div>
           </div>
