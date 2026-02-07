@@ -1,6 +1,5 @@
 import React from 'react';
 import { Users, Award, Globe, Star, MapPin, Calendar } from 'lucide-react';
-import ImagePlaceholder from '../components/ImagePlaceholder';
 
 const Home: React.FC = () => {
   const events = [
@@ -77,28 +76,88 @@ const Home: React.FC = () => {
       id: 1,
       name: 'United States',
       description: 'Top universities and research opportunities',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
+      image: (
+        <div style={{
+          width: '250px',
+          height: '180px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA
+        </div>
+      ),
       universities: '150+ Universities',
     },
     {
       id: 2,
       name: 'United Kingdom',
       description: 'Rich academic heritage and diverse culture',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
+      image: (
+        <div style={{
+          width: '250px',
+          height: '180px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA
+        </div>
+      ),
       universities: '100+ Universities',
     },
     {
       id: 3,
       name: 'Canada',
       description: 'Quality education and immigration pathways',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
+      image: (
+        <div style={{
+          width: '250px',
+          height: '180px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA
+        </div>
+      ),
       universities: '80+ Universities',
     },
     {
       id: 4,
       name: 'Australia',
       description: 'Excellent lifestyle and academic standards',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
+      image: (
+        <div style={{
+          width: '250px',
+          height: '180px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA
+        </div>
+      ),
       universities: '40+ Universities',
     },
   ];
@@ -110,7 +169,13 @@ const Home: React.FC = () => {
       university: 'MIT, USA',
       review: 'The guidance I received was exceptional. They helped me choose the right university and assisted with the entire application process.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
+      image: (
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23FFD700'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='black' font-family='Arial' font-size='24' font-weight='bold'%3EWoman with Books%3C/text%3E%3C/svg%3E"
+          alt="Priya Sharma"
+          className="rounded-full shadow-lg w-16 h-16"
+        />
+      ),
     },
     {
       id: 2,
@@ -118,7 +183,13 @@ const Home: React.FC = () => {
       university: 'Oxford, UK',
       review: 'Professional service with personal attention. They made my dream of studying abroad come true.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
+      image: (
+        <img
+          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23FFD700'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='black' font-family='Arial' font-size='24' font-weight='bold'%3EWoman with Books%3C/text%3E%3C/svg%3E"
+          alt="Rahul Kumar"
+          className="rounded-full shadow-lg w-16 h-16"
+        />
+      ),
     },
     {
       id: 3,
@@ -286,11 +357,21 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {destinations.map((destination) => (
               <div key={destination.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <img
-                  src={destination.image}
-                  alt={destination.name}
-                  className="w-full h-40 object-cover"
-                />
+                <div
+                style={{
+                    width: '100%',
+                    height: '160px',
+                    backgroundColor: '#FFD700',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {destination.name}
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-dark mb-3">{destination.name}</h3>
                   <p className="text-gray-600 mb-4">{destination.description}</p>
@@ -359,7 +440,7 @@ const Home: React.FC = () => {
                     borderRadius: '50%'
                   }}
                 >
-                  {review.name.charAt(0)}
+                  RK
                 </div>
                   <div>
                     <h4 className="font-semibold text-dark text-lg">{review.name}</h4>
