@@ -110,8 +110,8 @@ const Home: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://source.unsplash.com/featured/?woman,book,education"
-                alt="Woman with book education"
+                src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=500&h=400&fit=crop"
+                alt="Woman studying with books"
                 className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
               />
             </div>
