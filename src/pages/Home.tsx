@@ -110,8 +110,8 @@ const Home: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://picsum.photos/seed/oldbookseducation/500/400.jpg"
-                alt="Old books education"
+                src="https://picsum.photos/seed/universitytextbooks/500/400.jpg"
+                alt="University textbooks"
                 className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
               />
             </div>
