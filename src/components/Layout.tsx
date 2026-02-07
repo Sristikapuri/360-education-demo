@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Users, LogIn, UserPlus, Menu, X, Phone, Mail } from 'lucide-react';
+import { BookOpen, Home, Users, LogIn, UserPlus, Menu, X, Phone, Mail, Info, HelpCircle, MessageSquare } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,8 +12,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
+    { name: 'About', href: '/about', icon: Info },
     { name: 'Study Destinations', href: '/courses', icon: BookOpen },
+    { name: 'Services', href: '/services', icon: MessageSquare },
     { name: 'Students', href: '/students', icon: Users },
+    { name: 'Blog', href: '/blog', icon: BookOpen },
+    { name: 'FAQ', href: '/faq', icon: HelpCircle },
+    { name: 'Contact', href: '/contact', icon: Phone },
     { name: 'Login', href: '/login', icon: LogIn },
     { name: 'Register', href: '/register', icon: UserPlus },
   ];
@@ -33,8 +38,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navigation.slice(0, 3).map((item) => (
+            <div className="hidden lg:flex items-center space-x-6">
+              {navigation.slice(0, 7).map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -47,6 +52,21 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                   {item.name}
                 </Link>
               ))}
+              <div className="flex items-center space-x-4 ml-4">
+                {navigation.slice(7, 9).map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`${
+                      location.pathname === item.href
+                        ? 'text-primary border-b-2 border-primary'
+                        : 'text-dark hover:text-primary'
+                    } px-3 py-2 text-sm font-medium transition-colors`}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* Desktop CTA Buttons */}
@@ -66,7 +86,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="md:flex items-center">
+            <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-dark hover:text-primary p-2"
