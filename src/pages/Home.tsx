@@ -126,24 +126,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: (
-                <div
-                  style={{
-                    width: '60px',
-                    height: '60px',
-                    backgroundColor: '#FFD700',
-                    color: '#000000',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    borderRadius: '50%'
-                  }}
-                >
-                  PS
-                </div>
-              ),
+      image: 'https://picsum.photos/seed/360education/60/60.jpg',
     },
   ];
 
@@ -171,7 +154,7 @@ const Home: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://dummyimage.com/h:400&w=600&text=Woman+with+Books&bg=FFD700&textcolor=000000"
+                src="https://picsum.photos/seed/360education/600/400.jpg"
                 alt="Woman holding books"
                 className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
               />
@@ -313,16 +296,20 @@ const Home: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
-                <div style={{width: '100%', height: '192px', backgroundColor: '#FFD700', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold'}}>
-                  Canada Expo
-                </div>
-                <Globe className="h-12 w-12 text-dark" />
-              </div>
+              <img
+                src="https://picsum.photos/seed/360education/300/200.jpg"
+                alt="Globe"
+                className="h-24 w-24 rounded-full mx-auto mb-6"
+              />
               <h3 className="text-2xl font-semibold text-dark mb-3">Global Reach</h3>
               <p className="text-gray-600">Partnerships with 500+ universities worldwide</p>
             </div>
             <div className="text-center">
+              <img
+                src="https://picsum.photos/seed/360education/300/200.jpg"
+                alt="Users"
+                className="h-24 w-24 rounded-full mx-auto mb-6"
+              />
               <div className="bg-primary w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-12 w-12 text-dark" />
               </div>
