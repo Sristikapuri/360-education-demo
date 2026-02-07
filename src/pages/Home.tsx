@@ -1,7 +1,5 @@
 import React from 'react';
-import { Users, Award, Globe, Star, MapPin, Calendar } from 'lucide-react';
-import SVGImage from '../components/SVGImage';
-import ImagePlaceholder from '../components/ImagePlaceholder';
+import { MapPin, Calendar, Star, Users, Award } from 'lucide-react';
 
 const Home: React.FC = () => {
   const events = [

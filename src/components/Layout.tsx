@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Users, LogIn, UserPlus, Menu, X, Phone, Mail, Info, HelpCircle, MessageSquare } from 'lucide-react';
+import { BookOpen, Home, Users, UserPlus, Menu, X, Phone, Mail, Info, HelpCircle, MessageSquare } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
