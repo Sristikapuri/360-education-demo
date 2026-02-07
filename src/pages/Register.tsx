@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Mail, Lock, User, BookOpen, AlertCircle, Check } from 'lucide-react';
+import { Eye, EyeOff, User, Mail, Lock, BookOpen, Check } from 'lucide-react';
 
 const Register: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -298,13 +298,21 @@ const Register: React.FC = () => {
               />
               <label htmlFor="agreeToTerms" className="ml-2 block text-sm text-gray-900">
                 I agree to the{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-500">
+                <button 
+                  type="button"
+                  className="text-blue-600 hover:text-blue-500 underline bg-transparent border-none cursor-pointer"
+                  onClick={() => console.log('Terms clicked')}
+                >
                   Terms and Conditions
-                </a>{' '}
+                </button>{' '}
                 and{' '}
-                <a href="#" className="text-blue-600 hover:text-blue-500">
+                <button 
+                  type="button"
+                  className="text-blue-600 hover:text-blue-500 underline bg-transparent border-none cursor-pointer"
+                  onClick={() => console.log('Privacy clicked')}
+                >
                   Privacy Policy
-                </a>
+                </button>
               </label>
             </div>
             {errors.agreeToTerms && (

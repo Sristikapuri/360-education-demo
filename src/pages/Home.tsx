@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { BookOpen, Users, Award, Clock, Star, ChevronRight, MapPin, Calendar, Phone, Mail, Globe, Check } from 'lucide-react';
+import { Users, Award, Globe, Star, MapPin, Calendar } from 'lucide-react';
 
 const Home: React.FC = () => {
   const events = [
