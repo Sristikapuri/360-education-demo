@@ -11,6 +11,8 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import FAQ from './pages/FAQ';
+import HomeSimple from './pages/HomeSimple';
+import TestImages from './pages/ImageTest';
 
 function App() {
   return (
@@ -20,7 +22,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/test" element={<Layout><TestImages /></Layout>} />
         <Route path="/simple" element={<Layout><HomeSimple /></Layout>} />
-        <Route path="/" element={<Layout><HomeSimple /></Layout>} />
+        <Route path="/" element={<Layout><Home /></Layout>} />
         <Route path="/courses" element={<Layout><Courses /></Layout>} />
         <Route path="/students" element={<Layout><Students /></Layout>} />
         <Route path="/about" element={<Layout><About /></Layout>} />

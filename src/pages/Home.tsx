@@ -10,66 +10,21 @@ const Home: React.FC = () => {
       title: 'USA Education Fair 2024',
       date: 'March 15, 2024',
       location: 'New Delhi',
-      image: (
-        <div style={{
-          width: '300px',
-          height: '200px',
-          backgroundColor: '#1E90FF',
-          color: '#FFFFFF',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          borderRadius: '8px'
-        }}>
-          USA Fair
-        </div>
-      ),
+      image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%231E90FF'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EUSA Fair%3C/text%3E%3C/svg%3E",
     },
     {
       id: 2,
       title: 'UK University Meet',
       date: 'March 20, 2024',
       location: 'Mumbai',
-      image: (
-        <div style={{
-          width: '300px',
-          height: '200px',
-          backgroundColor: '#1E90FF',
-          color: '#FFFFFF',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          borderRadius: '8px'
-        }}>
-          UK Meet
-        </div>
-      ),
+      image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%23FFD700'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='black' font-family='Arial' font-size='16' font-weight='bold'%3EUK Meet%3C/text%3E%3C/svg%3E",
     },
     {
       id: 3,
       title: 'Canada Study Expo',
       date: 'March 25, 2024',
       location: 'Bangalore',
-      image: (
-        <div style={{
-          width: '300px',
-          height: '200px',
-          backgroundColor: '#1E90FF',
-          color: '#FFFFFF',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          borderRadius: '8px'
-        }}>
-          USA Fair
-        </div>
-      ),
+      image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%231E90FF'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3ECanada Expo%3C/text%3E%3C/svg%3E",
     },
   ];
 
@@ -127,7 +82,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: <SVGImage width={300} height={200} color="#1E90FF" text="USA Fair" />,
+      image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%231E90FF'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EUSA Fair%3C/text%3E%3C/svg%3E",
     },
   ];
 
