@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen, Home, Users, Settings, LogIn, UserPlus } from 'lucide-react';
+import { BookOpen, Home, Users, Settings, LogIn, UserPlus, Menu, X, Phone, Mail } from 'lucide-react';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,96 +8,223 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navigation = [
     { name: 'Home', href: '/', icon: Home },
-    { name: 'Courses', href: '/courses', icon: BookOpen },
+    { name: 'Study Destinations', href: '/courses', icon: BookOpen },
     { name: 'Students', href: '/students', icon: Users },
     { name: 'Login', href: '/login', icon: LogIn },
     { name: 'Register', href: '/register', icon: UserPlus },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <nav className="bg-white shadow-lg">
+    <div className="min-h-screen bg-light">
+      {/* Navigation */}
+      <nav className="bg-white shadow-lg sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
+            {/* Logo */}
             <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <BookOpen className="h-8 w-8 text-blue-600" />
-                <span className="ml-2 text-xl font-bold text-gray-900">360 Education</span>
-              </div>
-              <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                {navigation.map((item) => {
-                  const Icon = item.icon;
-                  return (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`${
-                        location.pathname === item.href
-                          ? 'border-blue-500 text-gray-900'
-                          : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                      } inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium`}
-                    >
-                      <Icon className="h-4 w-4 mr-1" />
-                      {item.name}
-                    </Link>
-                  );
-                })}
-              </div>
+              <Link to="/" className="flex items-center">
+                <BookOpen className="h-8 w-8 text-primary" />
+                <span className="ml-2 text-xl font-bold text-dark">360 Education</span>
+              </Link>
             </div>
-            <div className="flex items-center">
-              <button className="p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
-                <Settings className="h-6 w-6" />
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navigation.slice(0, 3).map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`${
+                      location.pathname === item.href
+                        ? 'text-primary border-b-2 border-primary'
+                        : 'text-dark hover:text-primary'
+                    } px-3 py-2 text-sm font-medium transition-colors`}
+                  >
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Desktop CTA Buttons */}
+            <div className="hidden md:flex items-center space-x-4">
+              <Link
+                to="/login"
+                className="text-dark hover:text-primary px-4 py-2 text-sm font-medium transition-colors"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="bg-primary text-dark px-4 py-2 rounded-lg text-sm font-semibold hover:bg-yellow-400 transition-colors"
+              >
+                Register
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:flex items-center">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-dark hover:text-primary p-2"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
               </button>
             </div>
           </div>
         </div>
-        
+
         {/* Mobile menu */}
-        <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
-            {navigation.map((item) => {
-              const Icon = item.icon;
-              return (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`${
-                    location.pathname === item.href
-                      ? 'bg-blue-50 border-blue-500 text-blue-700'
-                      : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'
-                  } block pl-3 pr-4 py-2 border-l-4 text-base font-medium`}
-                >
-                  <Icon className="h-4 w-4 inline mr-2" />
-                  {item.name}
-                </Link>
-              );
-            })}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navigation.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`${
+                      location.pathname === item.href
+                        ? 'bg-primary text-dark'
+                        : 'text-dark hover:bg-primary hover:text-dark'
+                    } block px-3 py-2 rounded-md text-base font-medium transition-colors`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <Icon className="h-4 w-4 inline mr-2" />
+                    {item.name}
+                  </Link>
+                );
+              })}
+            </div>
+            
+            {/* Mobile Contact Info */}
+            <div className="px-4 py-3 border-t border-gray-200">
+              <div className="flex items-center text-sm text-gray-600 mb-2">
+                <Phone className="h-4 w-4 mr-2" />
+                +91 98765 43210
+              </div>
+              <div className="flex items-center text-sm text-gray-600">
+                <Mail className="h-4 w-4 mr-2" />
+                info@360education.com
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </nav>
 
-      <main className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div className="px-4 py-6 sm:px-0">
-          {children}
-        </div>
+      {/* Main Content */}
+      <main>
+        {children}
       </main>
 
-      <footer className="bg-white border-t border-gray-200">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center">
-            <p className="text-center text-sm text-gray-500">
-              © 2024 360 Education Demo. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500">
-                Terms of Service
-              </a>
+      {/* Footer */}
+      <footer className="bg-dark text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {/* Company Info */}
+            <div className="col-span-1 md:col-span-2">
+              <div className="flex items-center mb-4">
+                <BookOpen className="h-8 w-8 text-primary" />
+                <span className="ml-2 text-xl font-bold">360 Education</span>
+              </div>
+              <p className="text-gray-300 mb-4 max-w-md">
+                Your trusted partner for study abroad guidance. We help students achieve their dreams of international education.
+              </p>
+              <div className="flex space-x-4">
+                <div className="flex items-center text-sm text-gray-300">
+                  <Phone className="h-4 w-4 mr-2" />
+                  +91 98765 43210
+                </div>
+                <div className="flex items-center text-sm text-gray-300">
+                  <Mail className="h-4 w-4 mr-2" />
+                  info@360education.com
+                </div>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/" className="text-gray-300 hover:text-primary transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/courses" className="text-gray-300 hover:text-primary transition-colors">
+                    Study Destinations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/students" className="text-gray-300 hover:text-primary transition-colors">
+                    Students
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/login" className="text-gray-300 hover:text-primary transition-colors">
+                    Login
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3 className="text-lg font-semibold mb-4">Services</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                    University Selection
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                    Application Assistance
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                    Visa Processing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-primary transition-colors">
+                    Pre-departure Support
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Footer */}
+          <div className="border-t border-gray-700 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 text-sm">
+                © 2024 360 Education. All rights reserved.
+              </p>
+              <div className="flex space-x-6 mt-4 md:mt-0">
+                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                  Terms of Service
+                </a>
+                <a href="#" className="text-gray-400 hover:text-primary text-sm transition-colors">
+                  Cookie Policy
+                </a>
+              </div>
             </div>
           </div>
         </div>

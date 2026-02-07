@@ -1,237 +1,280 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, Users, BookOpen, ChevronRight } from 'lucide-react';
+import { Search, Globe, MapPin, GraduationCap, DollarSign, Clock, Star, Filter } from 'lucide-react';
 
-interface Course {
+interface Destination {
   id: number;
-  title: string;
-  instructor: string;
-  rating: number;
-  students: number;
-  price: number;
-  duration: string;
-  level: string;
-  category: string;
-  image: string;
+  country: string;
   description: string;
+  universities: number;
+  programs: string[];
+  avgCost: string;
+  duration: string;
+  requirements: string[];
+  image: string;
+  rating: number;
+  popularCourses: string[];
 }
 
 const Courses: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedLevel, setSelectedLevel] = useState('all');
+  const [selectedRegion, setSelectedRegion] = useState('all');
 
-  const courses: Course[] = [
+  const destinations: Destination[] = [
     {
       id: 1,
-      title: 'Introduction to Web Development',
-      instructor: 'John Doe',
+      country: 'United States',
+      description: 'World-class education with cutting-edge research and diverse cultural experience',
+      universities: 150,
+      programs: ['Engineering', 'Business', 'Medicine', 'Arts', 'Computer Science'],
+      avgCost: '$20,000 - $60,000/year',
+      duration: '4 years',
+      requirements: ['SAT/ACT', 'IELTS/TOEFL', 'GPA 3.0+', 'Recommendation Letters'],
+      image: 'https://via.placeholder.com/400x250/1E90FF/FFFFFF?text=United+States',
       rating: 4.8,
-      students: 1234,
-      price: 49.99,
-      duration: '8 weeks',
-      level: 'Beginner',
-      category: 'Web Development',
-      image: 'https://via.placeholder.com/300x200/3B82F6/FFFFFF?text=Web+Dev',
-      description: 'Learn HTML, CSS, and JavaScript from scratch',
+      popularCourses: ['Computer Science', 'Engineering', 'Business Administration'],
     },
     {
       id: 2,
-      title: 'Data Science Fundamentals',
-      instructor: 'Jane Smith',
+      country: 'United Kingdom',
+      description: 'Prestigious universities with rich academic heritage and shorter degree programs',
+      universities: 100,
+      programs: ['Business', 'Law', 'Engineering', 'Medicine', 'Arts'],
+      avgCost: '£15,000 - £38,000/year',
+      duration: '3 years',
+      requirements: ['A-Levels', 'IELTS', 'Personal Statement', 'References'],
+      image: 'https://via.placeholder.com/400x250/FFD700/000000?text=United+Kingdom',
       rating: 4.9,
-      students: 892,
-      price: 69.99,
-      duration: '12 weeks',
-      level: 'Intermediate',
-      category: 'Data Science',
-      image: 'https://via.placeholder.com/300x200/10B981/FFFFFF?text=Data+Science',
-      description: 'Master data analysis and machine learning basics',
+      popularCourses: ['Business Management', 'Law', 'Engineering'],
     },
     {
       id: 3,
-      title: 'Mobile App Development',
-      instructor: 'Mike Johnson',
+      country: 'Canada',
+      description: 'Quality education with affordable tuition and excellent post-graduation opportunities',
+      universities: 80,
+      programs: ['Engineering', 'Business', 'IT', 'Healthcare', 'Environmental Studies'],
+      avgCost: 'CAD 16,000 - CAD 35,000/year',
+      duration: '4 years',
+      requirements: ['High School Diploma', 'IELTS', 'SOP', 'Reference Letters'],
+      image: 'https://via.placeholder.com/400x250/1E90FF/FFFFFF?text=Canada',
       rating: 4.7,
-      students: 756,
-      price: 59.99,
-      duration: '10 weeks',
-      level: 'Intermediate',
-      category: 'Mobile Development',
-      image: 'https://via.placeholder.com/300x200/F59E0B/FFFFFF?text=Mobile+Dev',
-      description: 'Build native iOS and Android apps',
+      popularCourses: ['Engineering', 'Computer Science', 'Business'],
     },
     {
       id: 4,
-      title: 'Advanced React Development',
-      instructor: 'Sarah Wilson',
-      rating: 4.9,
-      students: 623,
-      price: 79.99,
-      duration: '6 weeks',
-      level: 'Advanced',
-      category: 'Web Development',
-      image: 'https://via.placeholder.com/300x200/8B5CF6/FFFFFF?text=React',
-      description: 'Deep dive into React ecosystem and patterns',
+      country: 'Australia',
+      description: 'Excellent education system with great lifestyle and research opportunities',
+      universities: 40,
+      programs: ['Business', 'Engineering', 'Medicine', 'Arts', 'Science'],
+      avgCost: 'AUD 20,000 - AUD 45,000/year',
+      duration: '3-4 years',
+      requirements: ['High School', 'IELTS/TOEFL', 'SOP', 'Academic Transcripts'],
+      image: 'https://via.placeholder.com/400x250/FFD700/000000?text=Australia',
+      rating: 4.6,
+      popularCourses: ['Business Administration', 'Engineering', 'Healthcare'],
     },
     {
       id: 5,
-      title: 'UI/UX Design Principles',
-      instructor: 'Emily Brown',
-      rating: 4.6,
-      students: 445,
-      price: 54.99,
-      duration: '8 weeks',
-      level: 'Beginner',
-      category: 'Design',
-      image: 'https://via.placeholder.com/300x200/EC4899/FFFFFF?text=UI%2FUX',
-      description: 'Learn user interface and experience design',
+      country: 'Germany',
+      description: 'Top-notch education with minimal or no tuition fees for international students',
+      universities: 120,
+      programs: ['Engineering', 'Science', 'Medicine', 'Arts', 'Business'],
+      avgCost: '€0 - €20,000/semester',
+      duration: '3-4 years',
+      requirements: ['High School', 'German Language', 'IELTS', 'Academic Records'],
+      image: 'https://via.placeholder.com/400x250/1E90FF/FFFFFF?text=Germany',
+      rating: 4.8,
+      popularCourses: ['Engineering', 'Computer Science', 'Natural Sciences'],
     },
     {
       id: 6,
-      title: 'Python for Data Science',
-      instructor: 'David Lee',
-      rating: 4.8,
-      students: 1567,
-      price: 64.99,
-      duration: '10 weeks',
-      level: 'Intermediate',
-      category: 'Data Science',
-      image: 'https://via.placeholder.com/300x200/14B8A6/FFFFFF?text=Python',
-      description: 'Python programming for data analysis',
+      country: 'New Zealand',
+      description: 'Safe and welcoming country with excellent education system and work opportunities',
+      universities: 25,
+      programs: ['Business', 'IT', 'Hospitality', 'Agriculture', 'Healthcare'],
+      avgCost: 'NZD 18,000 - NZD 35,000/year',
+      duration: '3-4 years',
+      requirements: ['High School', 'IELTS', 'SOP', 'Medical Certificate'],
+      image: 'https://via.placeholder.com/400x250/FFD700/000000?text=New+Zealand',
+      rating: 4.5,
+      popularCourses: ['Business Studies', 'IT', 'Hospitality Management'],
     },
   ];
 
-  const categories = ['all', 'Web Development', 'Data Science', 'Mobile Development', 'Design'];
-  const levels = ['all', 'Beginner', 'Intermediate', 'Advanced'];
+  const regions = ['all', 'North America', 'Europe', 'Asia-Pacific', 'Others'];
 
-  const filteredCourses = courses.filter(course => {
-    const matchesSearch = course.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         course.instructor.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || course.category === selectedCategory;
-    const matchesLevel = selectedLevel === 'all' || course.level === selectedLevel;
+  const filteredDestinations = destinations.filter(destination => {
+    const matchesSearch = destination.country.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         destination.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    return matchesSearch && matchesCategory && matchesLevel;
+    if (selectedRegion === 'all') return matchesSearch;
+    
+    const regionMap: Record<string, string[]> = {
+      'North America': ['United States', 'Canada'],
+      'Europe': ['United Kingdom', 'Germany'],
+      'Asia-Pacific': ['Australia', 'New Zealand'],
+    };
+    
+    const matchesRegion = regionMap[selectedRegion]?.includes(destination.country);
+    return matchesSearch && (selectedRegion === 'Others' ? !regionMap[selectedRegion]?.includes(destination.country) : matchesRegion);
   });
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Explore Courses</h1>
-        <p className="text-xl text-gray-600">Discover our comprehensive catalog of courses</p>
-      </div>
+    <div className="min-h-screen bg-light py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-dark mb-4">Study Destinations</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Explore top study destinations around the world and find the perfect match for your educational goals
+          </p>
+        </div>
 
-      {/* Search and Filters */}
-      <div className="bg-white p-6 rounded-xl shadow-md">
-        <div className="flex flex-col lg:flex-row gap-4">
-          <div className="flex-1">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Search courses or instructors..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
+        {/* Search and Filters */}
+        <div className="bg-white p-6 rounded-xl shadow-md mb-8">
+          <div className="flex flex-col lg:flex-row gap-4">
+            <div className="flex-1">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search destinations or programs..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                />
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <select
+                value={selectedRegion}
+                onChange={(e) => setSelectedRegion(e.target.value)}
+                className="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              >
+                {regions.map(region => (
+                  <option key={region} value={region}>
+                    {region === 'all' ? 'All Regions' : region}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
-          <div className="flex gap-4">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              {categories.map(category => (
-                <option key={category} value={category}>
-                  {category === 'all' ? 'All Categories' : category}
-                </option>
-              ))}
-            </select>
-            <select
-              value={selectedLevel}
-              onChange={(e) => setSelectedLevel(e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            >
-              {levels.map(level => (
-                <option key={level} value={level}>
-                  {level === 'all' ? 'All Levels' : level}
-                </option>
-              ))}
-            </select>
-          </div>
         </div>
-      </div>
 
-      {/* Results Count */}
-      <div className="flex justify-between items-center">
-        <p className="text-gray-600">
-          Showing <span className="font-semibold">{filteredCourses.length}</span> courses
-        </p>
-        <div className="flex items-center gap-2">
-          <Filter className="h-4 w-4 text-gray-400" />
-          <select className="px-3 py-1 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-            <option>Most Popular</option>
-            <option>Highest Rated</option>
-            <option>Newest</option>
-            <option>Price: Low to High</option>
-            <option>Price: High to Low</option>
-          </select>
+        {/* Results Count */}
+        <div className="flex justify-between items-center mb-8">
+          <p className="text-gray-600">
+            Showing <span className="font-semibold">{filteredDestinations.length}</span> destinations
+          </p>
         </div>
-      </div>
 
-      {/* Course Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredCourses.map((course) => (
-          <div key={course.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-            <img
-              src={course.image}
-              alt={course.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-6">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm text-blue-600 font-medium">{course.category}</span>
-                <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">{course.level}</span>
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{course.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{course.description}</p>
-              <p className="text-gray-600 mb-4">By {course.instructor}</p>
-              
-              <div className="flex items-center gap-4 mb-4 text-sm text-gray-600">
-                <div className="flex items-center">
-                  <Star className="h-4 w-4 text-yellow-400 fill-current" />
-                  <span className="ml-1">{course.rating}</span>
-                </div>
-                <div className="flex items-center">
-                  <Users className="h-4 w-4" />
-                  <span className="ml-1">{course.students.toLocaleString()}</span>
-                </div>
-                <div className="flex items-center">
-                  <Clock className="h-4 w-4" />
-                  <span className="ml-1">{course.duration}</span>
+        {/* Destinations Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {filteredDestinations.map((destination) => (
+            <div key={destination.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+              <div className="relative">
+                <img
+                  src={destination.image}
+                  alt={destination.country}
+                  className="w-full h-56 object-cover"
+                />
+                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full">
+                  <div className="flex items-center">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                    <span className="text-sm font-semibold">{destination.rating}</span>
+                  </div>
                 </div>
               </div>
               
-              <div className="flex justify-between items-center">
-                <span className="text-2xl font-bold text-gray-900">${course.price}</span>
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors inline-flex items-center">
-                  Enroll Now
-                  <ChevronRight className="ml-1 h-4 w-4" />
-                </button>
+              <div className="p-6">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <h3 className="text-2xl font-bold text-dark mb-2">{destination.country}</h3>
+                    <p className="text-gray-600">{destination.description}</p>
+                  </div>
+                </div>
+
+                {/* Quick Stats */}
+                <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="text-center">
+                    <Globe className="h-6 w-6 text-primary mx-auto mb-2" />
+                    <div className="text-lg font-semibold text-dark">{destination.universities}+</div>
+                    <div className="text-xs text-gray-600">Universities</div>
+                  </div>
+                  <div className="text-center">
+                    <DollarSign className="h-6 w-6 text-primary mx-auto mb-2" />
+                    <div className="text-sm font-semibold text-dark">{destination.avgCost}</div>
+                    <div className="text-xs text-gray-600">Avg. Cost</div>
+                  </div>
+                  <div className="text-center">
+                    <Clock className="h-6 w-6 text-primary mx-auto mb-2" />
+                    <div className="text-lg font-semibold text-dark">{destination.duration}</div>
+                    <div className="text-xs text-gray-600">Duration</div>
+                  </div>
+                </div>
+
+                {/* Popular Courses */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-dark mb-2">Popular Courses</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {destination.popularCourses.map((course, index) => (
+                      <span key={index} className="bg-primary bg-opacity-20 text-dark px-3 py-1 rounded-full text-sm">
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Requirements */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-dark mb-2">Basic Requirements</h4>
+                  <ul className="text-sm text-gray-600 space-y-1">
+                    {destination.requirements.slice(0, 3).map((req, index) => (
+                      <li key={index} className="flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+                        {req}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-4">
+                  <button className="flex-1 bg-primary text-dark py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                    Learn More
+                  </button>
+                  <button className="flex-1 border-2 border-primary text-dark py-3 rounded-lg font-semibold hover:bg-primary hover:text-dark transition-colors">
+                    Apply Now
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {filteredCourses.length === 0 && (
-        <div className="text-center py-12">
-          <BookOpen className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No courses found</h3>
-          <p className="text-gray-600">Try adjusting your search or filters</p>
+          ))}
         </div>
-      )}
+
+        {filteredDestinations.length === 0 && (
+          <div className="text-center py-12">
+            <Globe className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+            <h3 className="text-lg font-medium text-dark mb-2">No destinations found</h3>
+            <p className="text-gray-600">Try adjusting your search or filters</p>
+          </div>
+        )}
+
+        {/* CTA Section */}
+        <div className="mt-16 bg-primary rounded-2xl p-8 text-center">
+          <h2 className="text-3xl font-bold text-dark mb-4">Need Help Choosing?</h2>
+          <p className="text-lg text-dark mb-8 max-w-2xl mx-auto">
+            Our expert counselors can help you select the perfect study destination based on your goals and preferences
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-dark text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors">
+              Talk to Counselor
+            </button>
+            <button className="border-2 border-dark text-dark px-8 py-3 rounded-lg font-semibold hover:bg-dark hover:text-primary transition-colors">
+              Download Guide
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
