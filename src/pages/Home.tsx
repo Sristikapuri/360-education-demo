@@ -125,21 +125,15 @@ const Home: React.FC = () => {
                 key={event.id}
                 className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
-                <div
+                <img
+                  src={event.image}
+                  alt={event.title}
                   style={{
                     width: '100%',
                     height: '192px',
-                    backgroundColor: '#FFD700',
-                    color: '#000000',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '16px',
-                    fontWeight: 'bold'
+                    objectFit: 'cover'
                   }}
-                >
-                  {event.title}
-                </div>
+                />
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-dark mb-3">{event.title}</h3>
                   <div className="flex items-center text-gray-600 mb-2">
