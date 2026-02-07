@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Globe, Star, MapPin, Calendar } from 'lucide-react';
+import ImagePlaceholder from '../components/ImagePlaceholder';
 
 const Home: React.FC = () => {
   const events = [
@@ -8,21 +9,66 @@ const Home: React.FC = () => {
       title: 'USA Education Fair 2024',
       date: 'March 15, 2024',
       location: 'New Delhi',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
+      image: (
+        <div style={{
+          width: '300px',
+          height: '200px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA Fair
+        </div>
+      ),
     },
     {
       id: 2,
       title: 'UK University Meet',
       date: 'March 20, 2024',
       location: 'Mumbai',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
+      image: (
+        <div style={{
+          width: '300px',
+          height: '200px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          UK Meet
+        </div>
+      ),
     },
     {
       id: 3,
       title: 'Canada Study Expo',
       date: 'March 25, 2024',
       location: 'Bangalore',
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
+      image: (
+        <div style={{
+          width: '300px',
+          height: '200px',
+          backgroundColor: '#1E90FF',
+          color: '#FFFFFF',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          borderRadius: '8px'
+        }}>
+          USA Fair
+        </div>
+      ),
     },
   ];
 
@@ -80,7 +126,24 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
+      image: (
+                <div
+                  style={{
+                    width: '60px',
+                    height: '60px',
+                    backgroundColor: '#FFD700',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    borderRadius: '50%'
+                  }}
+                >
+                  PS
+                </div>
+              ),
     },
   ];
 
@@ -108,7 +171,7 @@ const Home: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=600&h=400&fit=crop"
+                src="https://dummyimage.com/h:400&w=600&text=Woman+with+Books&bg=FFD700&textcolor=000000"
                 alt="Woman holding books"
                 className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
               />
@@ -123,12 +186,25 @@ const Home: React.FC = () => {
           <h2 className="text-4xl font-bold text-dark mb-16 text-center">Upcoming Events</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((event) => (
-              <div key={event.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="w-full h-48 object-cover"
-                />
+              <div
+                key={event.id}
+                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                <div
+                  style={{
+                    width: '100%',
+                    height: '192px',
+                    backgroundColor: '#FFD700',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '16px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  {event.title}
+                </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-dark mb-3">{event.title}</h3>
                   <div className="flex items-center text-gray-600 mb-2">
@@ -269,11 +345,22 @@ const Home: React.FC = () => {
             {reviews.map((review) => (
               <div key={review.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
-                  <img
-                    src={review.image}
-                    alt={review.name}
-                    className="w-16 h-16 rounded-full mr-4"
-                  />
+                  <div
+                  style={{
+                    width: '64px',
+                    height: '64px',
+                    backgroundColor: '#FFD700',
+                    color: '#000000',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    borderRadius: '50%'
+                  }}
+                >
+                  {review.name.charAt(0)}
+                </div>
                   <div>
                     <h4 className="font-semibold text-dark text-lg">{review.name}</h4>
                     <p className="text-sm text-gray-600">{review.university}</p>
