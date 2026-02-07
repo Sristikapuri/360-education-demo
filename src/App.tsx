@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
-import HomeSimple from './pages/HomeSimple';
+import Home from './pages/Home';
 import Courses from './pages/Courses';
 import Students from './pages/Students';
 import Login from './pages/Login';
@@ -11,7 +11,6 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import FAQ from './pages/FAQ';
-import ImageTest from './pages/ImageTest';
 
 function App() {
   return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Globe, Star, MapPin, Calendar } from 'lucide-react';
+import SVGImage from '../components/SVGImage';
 import ImagePlaceholder from '../components/ImagePlaceholder';
 
 const Home: React.FC = () => {
@@ -126,7 +127,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: 'https://i.imgur.com/360education1.jpg',
+      image: <SVGImage width={300} height={200} color="#1E90FF" text="USA Fair" />,
     },
   ];
 
@@ -153,11 +154,7 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <img
-                src="https://picsum.photos/seed/360education/600/400.jpg"
-                alt="Woman holding books"
-                className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
-              />
+              <SVGImage width={300} height={200} color="#FFD700" text="Woman holding books" />
             </div>
           </div>
         </div>
