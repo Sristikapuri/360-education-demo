@@ -8,21 +8,21 @@ const Home: React.FC = () => {
       title: 'USA Education Fair 2024',
       date: 'March 15, 2024',
       location: 'New Delhi',
-      image: 'https://picsum.photos/300/200?random=1',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
     },
     {
       id: 2,
       title: 'UK University Meet',
       date: 'March 20, 2024',
       location: 'Mumbai',
-      image: 'https://picsum.photos/300/200?random=2',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
     },
     {
       id: 3,
       title: 'Canada Study Expo',
       date: 'March 25, 2024',
       location: 'Bangalore',
-      image: 'https://picsum.photos/300/200?random=3',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=300&h=200&fit=crop',
     },
   ];
 
@@ -31,28 +31,28 @@ const Home: React.FC = () => {
       id: 1,
       name: 'United States',
       description: 'Top universities and research opportunities',
-      image: 'https://picsum.photos/250/180?random=4',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
       universities: '150+ Universities',
     },
     {
       id: 2,
       name: 'United Kingdom',
       description: 'Rich academic heritage and diverse culture',
-      image: 'https://picsum.photos/250/180?random=5',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
       universities: '100+ Universities',
     },
     {
       id: 3,
       name: 'Canada',
       description: 'Quality education and immigration pathways',
-      image: 'https://picsum.photos/250/180?random=6',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
       universities: '80+ Universities',
     },
     {
       id: 4,
       name: 'Australia',
       description: 'Excellent lifestyle and academic standards',
-      image: 'https://picsum.photos/250/180?random=7',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=250&h=180&fit=crop',
       universities: '40+ Universities',
     },
   ];
@@ -64,7 +64,7 @@ const Home: React.FC = () => {
       university: 'MIT, USA',
       review: 'The guidance I received was exceptional. They helped me choose the right university and assisted with the entire application process.',
       rating: 5,
-      image: 'https://picsum.photos/60/60?random=9',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
     },
     {
       id: 2,
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
       university: 'Oxford, UK',
       review: 'Professional service with personal attention. They made my dream of studying abroad come true.',
       rating: 5,
-      image: 'https://picsum.photos/60/60?random=10',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
     },
     {
       id: 3,
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: 'https://picsum.photos/60/60?random=11',
+      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
     },
   ];
 
@@ -108,7 +108,7 @@ const Home: React.FC = () => {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img
-                src="https://picsum.photos/600/400?random=8"
+                src="https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=600&h=400&fit=crop"
                 alt="Woman holding books"
                 className="rounded-lg shadow-2xl w-full max-w-md lg:max-w-lg"
               />

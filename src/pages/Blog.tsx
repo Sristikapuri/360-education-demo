@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
       date: "March 15, 2024",
       readTime: "5 min read",
       category: "University Rankings",
-      image: "https://picsum.photos/400/250?random=blog1",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: true
     },
     {
@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
       date: "March 12, 2024",
       readTime: "8 min read",
       category: "Visa Guide",
-      image: "https://picsum.photos/400/250?random=blog2",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: true
     },
     {
@@ -33,7 +33,7 @@ const Blog: React.FC = () => {
       date: "March 10, 2024",
       readTime: "6 min read",
       category: "Scholarships",
-      image: "https://picsum.photos/400/250?random=blog3",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: false
     },
     {
@@ -44,7 +44,7 @@ const Blog: React.FC = () => {
       date: "March 8, 2024",
       readTime: "7 min read",
       category: "Test Preparation",
-      image: "https://picsum.photos/400/250?random=blog4",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: false
     },
     {
@@ -55,7 +55,7 @@ const Blog: React.FC = () => {
       date: "March 5, 2024",
       readTime: "5 min read",
       category: "Student Life",
-      image: "https://picsum.photos/400/250?random=blog5",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: false
     },
     {
@@ -66,7 +66,7 @@ const Blog: React.FC = () => {
       date: "March 1, 2024",
       readTime: "9 min read",
       category: "Application Tips",
-      image: "https://picsum.photos/400/250?random=blog6",
+      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
       featured: false
     }
   ];
