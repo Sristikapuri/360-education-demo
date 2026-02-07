@@ -126,7 +126,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: 'https://picsum.photos/seed/360education/60/60.jpg',
+      image: 'https://i.imgur.com/360education1.jpg',
     },
   ];
 

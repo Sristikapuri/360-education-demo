@@ -11,7 +11,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import FAQ from './pages/FAQ';
-import TestImages from './pages/TestImages';
+import ImageTest from './pages/ImageTest';
 
 function App() {
   return (
