@@ -66,7 +66,7 @@ const Home: React.FC = () => {
       university: 'MIT, USA',
       review: 'The guidance I received was exceptional. They helped me choose the right university and assisted with the entire application process.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
+      image: 'https://picsum.photos/seed/priyasharma/64/64.jpg',
     },
     {
       id: 2,
@@ -74,7 +74,7 @@ const Home: React.FC = () => {
       university: 'Oxford, UK',
       review: 'Professional service with personal attention. They made my dream of studying abroad come true.',
       rating: 5,
-      image: 'https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=60&h=60&fit=crop&face=1',
+      image: 'https://picsum.photos/seed/rahulkumar/64/64.jpg',
     },
     {
       id: 3,
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
       university: 'Toronto, Canada',
       review: 'From visa assistance to pre-departure orientation, everything was handled perfectly.',
       rating: 5,
-      image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect width='300' height='200' fill='%231E90FF'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='white' font-family='Arial' font-size='16' font-weight='bold'%3EUSA Fair%3C/text%3E%3C/svg%3E",
+      image: 'https://picsum.photos/seed/ananyareddy/64/64.jpg',
     },
   ];
 
@@ -109,7 +109,11 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="order-1 lg:order-2 relative">
-              <SVGImage width={300} height={200} color="#FFD700" text="Woman holding books" />
+              <img
+                src="https://picsum.photos/seed/studentsabroad/500/400.jpg"
+                alt="Students studying abroad"
+                className="rounded-2xl shadow-2xl w-full max-w-lg mx-auto"
+              />
             </div>
           </div>
         </div>
@@ -281,22 +285,16 @@ const Home: React.FC = () => {
             {reviews.map((review) => (
               <div key={review.id} className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-all duration-300">
                 <div className="flex items-center mb-6">
-                  <div
-                  style={{
-                    width: '64px',
-                    height: '64px',
-                    backgroundColor: '#FFD700',
-                    color: '#000000',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '12px',
-                    fontWeight: 'bold',
-                    borderRadius: '50%'
-                  }}
-                >
-                  {review.name.charAt(0)}
-                </div>
+                  <img
+                    src={review.image}
+                    alt={review.name}
+                    style={{
+                      width: '64px',
+                      height: '64px',
+                      borderRadius: '50%',
+                      objectFit: 'cover'
+                    }}
+                  />
                   <div>
                     <h4 className="font-semibold text-dark text-lg">{review.name}</h4>
                     <p className="text-sm text-gray-600">{review.university}</p>
