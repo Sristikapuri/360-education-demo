@@ -11,7 +11,7 @@ const Blog: React.FC = () => {
       date: "March 15, 2024",
       readTime: "5 min read",
       category: "University Rankings",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/computerscience2024/400/250.jpg",
       featured: true
     },
     {
@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
       date: "March 12, 2024",
       readTime: "8 min read",
       category: "Visa Guide",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/studentvisausa/400/250.jpg",
       featured: true
     },
     {
@@ -33,7 +33,7 @@ const Blog: React.FC = () => {
       date: "March 10, 2024",
       readTime: "6 min read",
       category: "Scholarships",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/blogpost/400/250.jpg",
       featured: false
     },
     {
@@ -44,7 +44,7 @@ const Blog: React.FC = () => {
       date: "March 8, 2024",
       readTime: "7 min read",
       category: "Test Preparation",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/blogpost/400/250.jpg",
       featured: false
     },
     {
@@ -55,7 +55,7 @@ const Blog: React.FC = () => {
       date: "March 5, 2024",
       readTime: "5 min read",
       category: "Student Life",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/blogpost/400/250.jpg",
       featured: false
     },
     {
@@ -66,7 +66,7 @@ const Blog: React.FC = () => {
       date: "March 1, 2024",
       readTime: "9 min read",
       category: "Application Tips",
-      image: "https://images.unsplash.com/photo-1551432678693-82d3f2e644e?w=400&h=250&fit=crop",
+      image: "https://picsum.photos/seed/blogpost/400/250.jpg",
       featured: false
     }
   ];
