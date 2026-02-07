@@ -19,7 +19,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'Blog', href: '/blog', icon: BookOpen },
     { name: 'FAQ', href: '/faq', icon: HelpCircle },
     { name: 'Contact', href: '/contact', icon: Phone },
-    { name: 'Login', href: '/login', icon: LogIn },
     { name: 'Register', href: '/register', icon: UserPlus },
   ];
 
@@ -39,7 +38,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-6">
-              {navigation.slice(0, 7).map((item) => (
+              {navigation.slice(0, 6).map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
@@ -53,7 +52,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </Link>
               ))}
               <div className="flex items-center space-x-4 ml-4">
-                {navigation.slice(7, 9).map((item) => (
+                {navigation.slice(6, 8).map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
