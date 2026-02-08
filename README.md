@@ -46,6 +46,26 @@ This project is a complete study abroad education platform that helps students f
 - Node.js 16+
 - npm or yarn
 
+### 360 Education Demo
+
+React-based education consultancy website with real photographs and modern design.
+
+## 🌐 Live Site
+https://sristikapuri.github.io/360-education-demo
+
+## 📁 Source Code
+https://github.com/Sristikapuri/360-education-demo
+
+## ✨ Features
+- React with TypeScript
+- Tailwind CSS styling
+- Real photographs throughout
+- Responsive design
+- Automatic deployment via GitHub Actions
+
+## 🚀 Deployment
+This project uses GitHub Actions for automatic deployment to GitHub Pages.
+
 ### Installation
 
 ```bash
